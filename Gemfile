@@ -16,7 +16,10 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'email_spec'
+  gem "factory_girl_rails", ">= 4.2.1"
+  gem 'launchy'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
-
-
-

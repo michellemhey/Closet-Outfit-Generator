@@ -1,0 +1,10 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1156" measuredH="454" mockupW="1083" mockupH="454">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="73" y="0" w="1083" h="454" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::HRule" x="73" y="139" w="1082" h="-1" measuredW="100" measuredH="10" zOrder="1" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
