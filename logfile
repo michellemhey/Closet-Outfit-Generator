@@ -1,0 +1,85 @@
+LOG:  database system was shut down at 2013-05-29 13:58:35 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_production" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+LOG:  database system was interrupted; last known up at 2013-06-11 14:35:17 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/18071D8
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_production" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-15 11:31:26 CDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
