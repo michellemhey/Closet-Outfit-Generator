@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Closet Generator" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Closet Generator" %>">
@@ -8,18 +10,48 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+
+   <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <div id="container" class="container">
-      <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
-      </header>
-      <div id="main" role="main">
-        <%= yield %>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Closet Generator</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <%= render 'layouts/navigation' %>
+                  <%= render 'layouts/messages' %>
+                  <div id="main" role="main">
+                    <%= yield %>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="text" placeholder="Password">
+              <button type="submit" class="btn">Sign In</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
+    </div>
+
   </body>
+
 </html>
