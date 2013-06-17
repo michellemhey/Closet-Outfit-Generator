@@ -9,6 +9,8 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
+gem 'carrierwave'
+
 #gem 'compass-rails'
 #gem 'zurb-foundation'
 
