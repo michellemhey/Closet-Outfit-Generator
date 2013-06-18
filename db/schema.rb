@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612151948) do
+ActiveRecord::Schema.define(:version => 20130618003849) do
+
+  create_table "clothings", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "type_id"
+    t.string   "image_path"
+    t.boolean  "is_dirty"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "type_classes", :force => true do |t|
+    t.string   "name"
+    t.string   "symbol"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "types", :force => true do |t|
+    t.string   "name"
+    t.integer  "type_class_id"
+    t.string   "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

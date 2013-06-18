@@ -3,5 +3,5 @@ class Clothing < ActiveRecord::Base
   has_many :types
   belongs_to :user
 
-  validates :description, :def => false
+  validates_presence_of :name
 end
