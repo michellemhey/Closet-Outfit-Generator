@@ -20,15 +20,20 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
+group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'faker'
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'email_spec'
-  gem 'factory_girl'
   gem 'launchy'
   gem 'quiet_assets'
+  gem 'guard-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
