@@ -1,0 +1,15 @@
+<%= form_for(:clothing, :url => clothing_index_path(@clothing)) do |f| %>
+  <div>
+    <%= f.label :name, "Clothing Name" %><br />
+      <%= f.text_field :name %><br />
+  </div><br />
+  <div>
+    <%= f.label :description, "Clothing Description" %><br />
+      <%= f.text_field :description %><br />
+  </div><br />
+  <div>
+    <%= f.label :type_id, "Clothing Type" %><br />
+      <%= f.text_field :type_id %><br />
+  </div><br />
+    <%= f. submit "Add Clothing" %>
+<% end %>
