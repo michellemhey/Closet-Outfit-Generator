@@ -3,5 +3,4 @@ class Type < ActiveRecord::Base
   has_one :type_class
   belongs_to :clothing
 
-  validates :name, :presence => true
 end
