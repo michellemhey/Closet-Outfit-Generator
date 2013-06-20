@@ -1,0 +1,9 @@
+<div>  
+  <ul>
+    <% @clothings.each do |clothing| %>
+      <li>
+        <%= link_to clothing.name, clothing %>
+      </li>
+    <% end %>
+  </ul>
+</div>
