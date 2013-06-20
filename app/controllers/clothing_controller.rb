@@ -39,7 +39,7 @@ class ClothingController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @clothing = Clothing.find(params[:id])
     @clothing.destroy
     if @clothing.destroy 
