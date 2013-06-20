@@ -8,6 +8,7 @@ gem 'pg'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "omniauth", "~> 1.1.4"
 
 gem 'carrierwave'
 

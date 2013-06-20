@@ -11,52 +11,41 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
 
-   <style type="text/css">
+    <style>
       body {
-        padding-top: 60px;
-        padding-bottom: 40px;
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
 
   </head>
-
+   
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">Closet Generator</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <%= render 'layouts/navigation' %>
-                  <%= render 'layouts/messages' %>
-                  <div id="main" role="main">
-                    <%= yield %>
-                  </div>
-                </ul>
-              </li>
-            </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="text" placeholder="Password">
-              <button type="submit" class="btn">Sign In</button>
-            </form>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div id="main" role="main">
+          <div class="container">
+            <%= render 'layouts/navigation' %>
+            <div class="content">
+              <div class="row">
+                <%= render 'layouts/messages' %>
+                <%= yield %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
+
 
     <div class="container">
-      <div class="span8">
-        <img>
-      </div>
+      <footer>
+
+      </footer>
     </div>
+    
+
+    <%= image_tag('stockphotocloset.png') %>
 
   </body>
 

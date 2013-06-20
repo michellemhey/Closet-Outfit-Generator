@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe TypeClass do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    FactoryGirl.create(:type_class_id).should be_valid
+  end
 end
