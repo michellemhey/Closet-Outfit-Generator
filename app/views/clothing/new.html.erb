@@ -8,8 +8,10 @@
       <%= f.text_field :description %><br />
   </div><br />
   <div>
-    <%= f.label :type_id, "Clothing Type" %><br />
-      <%= f.text_field :type_id %><br />
+  	<%= check_box_tag(:type_id, "Top") %> Top<br />
+  	<%= check_box_tag(:type_id, "Bottom") %> Bottom<br />
+  	<%= check_box_tag(:type_id, "Shoes") %> Shoes<br />
+  	<%= check_box_tag(:type_id, "Full") %> Full<br />
   </div><br />
     <%= f. submit "Add Clothing" %>
 <% end %>
