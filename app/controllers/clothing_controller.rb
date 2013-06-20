@@ -9,12 +9,12 @@ class ClothingController < ApplicationController
   end
 
   def new
-    @clothing = Clothing.new
+    @clothing = Clothing.new(params[:clothing])
     @types = Type.all
   end
 
   def create
-    @clothing = Clothing.new(params)
+    @clothing = Clothing.new(params[:clothing])
     if @clothing.save
       redirect_to :action => 'index'
     else
@@ -47,7 +47,7 @@ class ClothingController < ApplicationController
     end
   end
 
-  def upload_clothing_images
+  def upload
     
   end
 end
