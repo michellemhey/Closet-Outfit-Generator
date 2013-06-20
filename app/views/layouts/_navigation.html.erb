@@ -18,4 +18,9 @@
     <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'Add Clothing', new_clothing_path %>
+    </li>
+  <% end %>
 </ul>
