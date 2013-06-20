@@ -3,7 +3,8 @@ RubyClosetIi::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :clothing, only: [:index, :create, :show]
+  resources :clothing
+  
   # authenticated :user do
   #   root :to => 'home#index'
   # end
