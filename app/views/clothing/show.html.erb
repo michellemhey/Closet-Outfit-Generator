@@ -2,4 +2,5 @@
 <p>Clothing: <%= @clothing.name %></p>
 <p>Description: <%= @clothing.description if @clothing.description %></p>
 <p>Type: <%= @clothing.type if @clothing.type %></p>
+<p>Image: <%= @clothing.image if @clothing.image %></p>
 <%= button_to "delete", @clothing, :method => :delete %>

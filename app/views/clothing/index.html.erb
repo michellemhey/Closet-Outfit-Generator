@@ -1,12 +1,13 @@
-<div>  
-  <ul>
-    <% @clothings.each do |clothing| %>
-      <li>
-        <%= link_to clothing.name, clothing %>
-        
-      </li>
+<div>
+  <% if @clothings.blank? %>
+    <p>There are not any pieces of clothing currently in the closet.</p>
+  <% else %>
+    <p>These are the current pieces of clothing in your closet.</p>
+    <ul>
+      <% @clothings.each do |c| %>
+        <li><%= link_to c.name, { :action => 'show', :id => c.id } -%></li>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
+    <p><%= link_to("Add More Clothing", new_clothing_path) %></p>
 </div>
-
-<%= link_to("Add Clothing", new_clothing_path) %>
