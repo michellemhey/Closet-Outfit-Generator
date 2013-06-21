@@ -11,9 +11,10 @@ gem "twitter-bootstrap-rails"
 gem "omniauth", "~> 1.1.4"
 
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'flash_cookie_session'
 
-#gem 'compass-rails'
-#gem 'zurb-foundation'
+gem "haml", "~> 4.0.3"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
