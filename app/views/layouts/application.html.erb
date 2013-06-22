@@ -38,6 +38,20 @@
 
 
     <div class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <li class="nav-header">What would you like to wear?</li>
+            <li><%= render 'layouts/navigation' %>
+            <div class="content">
+              <div class="row">
+                <%= render 'layouts/messages' %>
+              </div>
+            </div>
+            </li>
+          </div>
+        </div>
+      </div>
       <%= yield %>
       <footer>
 

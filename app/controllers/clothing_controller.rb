@@ -15,6 +15,7 @@ class ClothingController < ApplicationController
 
   def create
     @clothing = Clothing.new(params[:clothing])
+    @clothing.type = Type.find(params[:type_id])
     if @clothing.save
       redirect_to :action => 'index'
     else
