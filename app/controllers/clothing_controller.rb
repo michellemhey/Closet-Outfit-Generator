@@ -1,7 +1,7 @@
 class ClothingController < ApplicationController
 
   def index
-    @clothings = Clothing.all
+    @clothings = Clothing.where(:user_id => current_user.id)
   end
 
   def show
@@ -16,6 +16,7 @@ class ClothingController < ApplicationController
   def create
     @clothing = Clothing.new(params[:clothing])
     @clothing.type = Type.find(params[:type_id])
+    @clothing.user = current_user
     if @clothing.save
       redirect_to :action => 'index'
     else
