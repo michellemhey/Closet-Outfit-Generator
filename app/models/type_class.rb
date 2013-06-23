@@ -1,6 +1,6 @@
 class TypeClass < ActiveRecord::Base
   attr_accessible :name, :symbol
-  belongs_to :type
+  has_many :type
 
   validates :name, :presence => true
   validates :symbol, :presence => true

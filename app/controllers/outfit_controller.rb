@@ -2,7 +2,9 @@ class OutfitController < ApplicationController
 
   def new
     @putfit = Outfit.new(params[:outfit])
-    @clothings = Clothing.all
+    @tops = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'top', :user_id => current_user.id)
+    @bottoms = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'btm', :user_id => current_user.id)
+    @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id)
   end
 
   def create
@@ -11,7 +13,9 @@ class OutfitController < ApplicationController
     if @outfit.save
       redirect_to :action => 'index'
     else
-      @clothings = Clothing.all
+      @tops = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'top', :user_id => current_user.id)
+      @bottoms = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'btm', :user_id => current_user.id)
+      @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id)
       render :action => 'new'
     end
   end

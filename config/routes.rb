@@ -22,11 +22,9 @@ RubyClosetIi::Application.routes.draw do
   root :to => "home#index"
 
   resources :clothing 
-
-  resources :properties do
-    resources :photos, :only => [:create, :destroy]
-  end
   
+  resources :outfit
+
   # authenticated :user do
   #   root :to => 'home#index'
   # end
