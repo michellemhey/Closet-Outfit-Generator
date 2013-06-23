@@ -14,7 +14,7 @@
   </div><br />
   <div>
     <% @types.each do |type| %>
-      <%= check_box_tag(:type_id, type.id) %> 
+      <%= radio_button_tag(:type_id, type.id) %> 
       <%= type.name %><br />
     <% end %>
   </div><br />

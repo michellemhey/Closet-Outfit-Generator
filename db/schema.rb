@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621145057) do
+ActiveRecord::Schema.define(:version => 20130623003401) do
 
   create_table "clothings", :force => true do |t|
     t.string   "name"
@@ -25,11 +25,28 @@ ActiveRecord::Schema.define(:version => 20130621145057) do
     t.string   "image"
   end
 
+  create_table "clothings_outfits", :id => false, :force => true do |t|
+    t.integer "clothing_id"
+    t.integer "outfit_id"
+  end
+
+  add_index "clothings_outfits", ["clothing_id", "outfit_id"], :name => "index_clothings_outfits_on_clothing_id_and_outfit_id"
+  add_index "clothings_outfits", ["outfit_id"], :name => "index_clothings_outfits_on_outfit_id"
+
   create_table "images", :force => true do |t|
     t.integer  "image_id"
     t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "outfits", :force => true do |t|
+    t.string   "name"
+    t.boolean  "is_favorite"
+    t.date     "last_worn"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "photos", :force => true do |t|
