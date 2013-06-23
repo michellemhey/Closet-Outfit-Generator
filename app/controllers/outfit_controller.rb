@@ -16,9 +16,6 @@ class OutfitController < ApplicationController
     end
   end
 
-  def generate
-  end
-
   def edit
     @outfit = Outfit.find(params[:id])
     @clothings = Clothing.all
@@ -49,8 +46,5 @@ class OutfitController < ApplicationController
     if @outfit.destroy
       redirect_to :action => 'index'
     end
-  end
-
-  def favorite
   end
 end

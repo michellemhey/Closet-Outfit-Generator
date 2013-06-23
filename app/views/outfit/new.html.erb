@@ -1,2 +1,11 @@
-<h1>Outfit#new</h1>
-<p>Find me in app/views/outfit/new.html.erb</p>
+<div>
+  
+  <% if @outfit_type == 0 %>
+    Top: <%= @outfit.clothings.select(|clothing| clothing.type.type_class.symbol == "top").first %>
+    Bottom: <%= @outfit.clothings.select(|clothing| clothing.type.type_class.symbol == "btm").first %>
+    Shoes: <%= @outfit.clothings.select(|clothing| clothing.type.type_class.symbol == "shu").first %>
+  <% elsif @outfit_type == 1 %>
+    Body: <%= @outfit.clothings.select(|clothing| clothing.type.type_class.symbol == "full").first %>
+    Shoes: <%= @outfit.clothings.select(|clothing| clothing.type.type_class.symbol == "shu").first %>
+  <% end %>
+</div>
