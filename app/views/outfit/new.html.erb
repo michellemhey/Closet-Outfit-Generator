@@ -2,15 +2,21 @@
 <div class="span5 offset3">
   <div id="slider" data-interval="false" class="carousel slide">
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="http://placehold.it/140x100">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100">
-      </div>
+      <% @tops.each_with_index do |top, i| %>
+        <div 
+        class="
+          <% if @selected.nil? %>
+            <% if i == 0  %>
+            active 
+            <% end %>
+          <% elsif @selected.contains(top) %> 
+            class="active item"
+          <% end %>
+          item"
+        >
+           Top: <%= top.name %>
+        </div>
+      <% end %>
     </div>
     <a class="left carousel-control" href="#slider" data-slide="prev">&lsaquo;</a>
     <a class="right carousel-control" href="#slider" data-slide="next">&rsaquo;</a>
@@ -20,15 +26,21 @@
 <div class="span5 offset3">
   <div id="sliderTwo" data-interval="false" class="carousel slide">
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="http://placehold.it/140x100=">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100=">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100=">
-      </div>
+      <% @bottoms.each_with_index do |bottom, i| %>
+        <div 
+        class="
+          <% if @selected.nil? %>
+            <% if i == 0  %>
+            active 
+            <% end %>
+          <% elsif @selected.contains(bottom) %> 
+            class="active item"
+          <% end %>
+          item"
+        >
+           Bottom: <%= bottom.name %>
+        </div>
+      <% end %>
     </div>
     <a class="left carousel-control" href="#sliderTwo" data-slide="prev">&lsaquo;</a>
     <a class="right carousel-control" href="#sliderTwo" data-slide="next">&rsaquo;</a>
@@ -38,15 +50,21 @@
 <div class="span5 offset3">
   <div id="sliderThree" data-interval="false" class="carousel slide">
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="http://placehold.it/140x100=">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100=">
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/140x100=">
-      </div>
+      <% @shoes.each_with_index do |shoe, i| %>
+        <div 
+        class="
+          <% if @selected.nil? %>
+            <% if i == 0  %>
+            active 
+            <% end %>
+          <% elsif @selected.contains(shoe) %> 
+            class="active item"
+          <% end %>
+          item"
+        >
+           shoe: <%= shoe.name %>
+        </div>
+      <% end %>
     </div>
     <a class="left carousel-control" href="#sliderThree" data-slide="prev">&lsaquo;</a>
     <a class="right carousel-control" href="#sliderThree" data-slide="next">&rsaquo;</a>
