@@ -9,12 +9,13 @@ class ClothingController < ApplicationController
   end
 
   def new
-    @clothing = Clothing.new(params[:clothing])
     @types = Type.all
+    @clothing = Clothing.new
   end
 
   def create
     @clothing = Clothing.new(params[:clothing])
+    @clothing.image_path = params[:image_path]
     @clothing.type = Type.find(params[:type_id])
     @clothing.user = current_user
     if @clothing.save
@@ -32,6 +33,7 @@ class ClothingController < ApplicationController
 
   def update
     @clothing = Clothing.find(params[:id])
+    @clothing.image_path = params[:image_path]
     @clothing.update(params)
     if @clothing.save
       redirect_to :action => 'index'

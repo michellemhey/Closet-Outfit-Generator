@@ -1,30 +1,12 @@
 RubyClosetIi::Application.routes.draw do
-  get "outfit/create"
-
-  get "outfit/new"
-
-  get "outfit/generate"
-
-  get "outfit/edit"
-
-  get "outfit/update"
-
-  get "outfit/show"
-
-  get "outfit/index"
-
-  get "outfit/delete"
-
-  get "outfit/favorite"
 
   devise_for :users
 
   root :to => "home#index"
 
   resources :clothing 
-  
   resources :outfit
-
+  
   # authenticated :user do
   #   root :to => 'home#index'
   # end

@@ -18,4 +18,13 @@
     <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
+  <% if user_signed_in? %>
+    <li id="wear">
+      What would you like to wear?
+    </li>
+  <% else %>
+    <li id="wear">
+      What would you like to wear?
+    </li>
+  <% end %>
 </ul>
