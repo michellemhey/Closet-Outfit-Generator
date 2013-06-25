@@ -1,80 +1,94 @@
-<div class="outfitslider">
-  <div class="span5 offset3">
-    <div id="slider" data-interval="false" class="carousel slide">
-      <div class="carousel-inner">
-        <% @tops.each_with_index do |top, i| %>
-          <div 
-          class="
-            <% if @selected.nil? %>
-              <% if i == 0  %>
-              active 
+<div class="container">
+  <div id="outfitgen">
+    <div class="outfitslider">
+      <div class="row">
+        <div class="span5 offset3">
+          <div id="slider" data-interval="false" class="carousel slide">
+            <div class="carousel-inner">
+              <% @tops.each_with_index do |top, i| %>
+                <div 
+                class="
+                  <% if @selected.nil? %>
+                    <% if i == 0  %>
+                    active 
+                    <% end %>
+                  <% elsif @selected.contains(top) %> 
+                    class="active item"
+                  <% end %>
+                  item"
+                >
+                    <p id="imageslideone">Top: <%= top.name %> <%= image_tag top.image_path_url%></p>
+                </div>
               <% end %>
-            <% elsif @selected.contains(top) %> 
-              class="active item"
-            <% end %>
-            item"
-          >
-        
+            </div>
+            <a class="left carousel-control" href="#slider" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#slider" data-slide="next">&rsaquo;</a>
           </div>
-        <% end %>
-      </div>
-      <a class="left carousel-control" href="#slider" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#slider" data-slide="next">&rsaquo;</a>
-    </div>
-  </div>
+        </div>
+      </div><br />
 
-  <div class="span5 offset3">
-    <div id="sliderTwo" data-interval="false" class="carousel slide">
-      <div class="carousel-inner">
-        <% @bottoms.each_with_index do |bottom, i| %>
-          <div 
-          class="
-            <% if @selected.nil? %>
-              <% if i == 0  %>
-              active 
+      <div class="row">
+        <div class="span5 offset3">
+          <div id="sliderTwo" data-interval="false" class="carousel slide">
+            <div class="carousel-inner">
+              <% @bottoms.each_with_index do |bottom, i| %>
+                <div 
+                class="
+                  <% if @selected.nil? %>
+                    <% if i == 0  %>
+                    active 
+                    <% end %>
+                  <% elsif @selected.contains(bottom) %> 
+                    class="active item"
+                  <% end %>
+                  item"
+                >
+                  <p id="imageslidetwo">Bottom: <%= bottom.name %> <%= image_tag bottom.image_path_url%></p>
+                </div>
               <% end %>
-            <% elsif @selected.contains(bottom) %> 
-              class="active item"
-            <% end %>
-            item"
-          >
-             Bottom: <%= bottom.name %>
+            </div>
+            <a class="left carousel-control" href="#sliderTwo" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#sliderTwo" data-slide="next">&rsaquo;</a>
           </div>
-        <% end %>
-      </div>
-      <a class="left carousel-control" href="#sliderTwo" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#sliderTwo" data-slide="next">&rsaquo;</a>
-    </div>
-  </div>
+        </div>
+      </div><br />
 
-  <div class="span5 offset3">
-    <div id="sliderThree" data-interval="false" class="carousel slide">
-      <div class="carousel-inner">
-        <% @shoes.each_with_index do |shoe, i| %>
-          <div 
-          class="
-            <% if @selected.nil? %>
-              <% if i == 0  %>
-              active 
+      <div class="row">
+        <div class="span5 offset3">
+          <div id="sliderThree" data-interval="false" class="carousel slide">
+            <div class="carousel-inner">
+              <% @shoes.each_with_index do |shoe, i| %>
+                <div 
+                class="
+                  <% if @selected.nil? %>
+                    <% if i == 0  %>
+                    active 
+                    <% end %>
+                  <% elsif @selected.contains(shoe) %> 
+                    class="active item"
+                  <% end %>
+                  item"
+                >
+                  <p id="imageslidethree">Shoe: <%= shoe.name %> <%= image_tag shoe.image_path_url%></p>
+                </div>
               <% end %>
-            <% elsif @selected.contains(shoe) %> 
-              class="active item"
-            <% end %>
-            item"
-          >
-             shoe: <%= shoe.name %>
+            </div>
+            <a class="left carousel-control" href="#sliderThree" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#sliderThree" data-slide="next">&rsaquo;</a>
           </div>
-        <% end %>
-      </div>
-      <a class="left carousel-control" href="#sliderThree" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#sliderThree" data-slide="next">&rsaquo;</a>
-    </div>
+        </div>
+      </div><br />
+
+        <div class="row">
+          <div class="span5 offset4">  
+            <div class="btn-group">
+              <button class="btn">Favorite</button>
+              <button class="btn">Generate</button>
+              <button class="btn">Select</button>
+            </div>
+          </div>
+        </div>
+     
+     </div>
   </div>
-    <div class="span5 offset4">  
-      <div class="btn-group">
-        <button class="btn">Favorite</button>
-        <button class="btn">Generate</button>
-        <button class="btn">Select</button>
-      </div>
-    </div>
 </div>

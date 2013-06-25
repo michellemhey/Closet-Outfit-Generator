@@ -1,24 +1,21 @@
-
-<%= form_for(:clothing, :url => clothing_index_path(@clothing)) do |f| %>
-  <div>
-    <%= f.label :name, "Clothing Name" %><br />
-      <%= f.text_field :name %><br />
-  </div><br />
-  <div>
-    <%= f.label :description, "Clothing Description" %><br />
-      <%= f.text_field :description %><br />
-  </div><br />
-  <div>
-    <%= f.label :image_path, "Upload Image of Clothing" %><br />
-      <%= f.file_field :image_path %><br />
-  </div><br />
-  <div>
-    <% @types.each do |type| %>
-      <%= radio_button_tag(:type_id, type.id) %> 
-      <%= type.name %><br />
+<div class="container">
+  <div class="row offset2">
+    <%= form_for(:clothing, :url => clothing_index_path(@clothing)) do |f| %>
+      <div id="clothingnew">
+        <%= f.label :name, "Clothing Name" %>
+          <%= f.text_field :name %>
+        <%= f.label :description, "Clothing Description" %><br />
+          <%= f.text_field :description %><br />
+        <%= f.label :image_path, "Upload Image of Clothing" %>    
+          <%= f.file_field :image_path %><br />
+      <br />
+        <% @types.each do |type| %>
+          <%= radio_button_tag(:type_id, type.id) %> 
+          <%= type.name %><br />
+        <% end %>
+      <br />
+        <%= f. submit "Add Clothing" %>
+      </div><br />
     <% end %>
-  </div><br />
-  <div>
-    <%= f. submit "Add Clothing" %>
-  </div><br />
-<% end %>
+  </div>
+</div>
