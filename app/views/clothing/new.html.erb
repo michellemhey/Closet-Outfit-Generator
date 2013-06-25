@@ -13,6 +13,8 @@
           <%= radio_button_tag(:type_id, type.id) %> 
           <%= type.name %><br />
         <% end %>
+
+        <%#= collection_select(:clothing, :type_id, Type.all, :id, :name, prompt: true) %>
       <br />
         <%= f. submit "Add Clothing" %>
       </div><br />

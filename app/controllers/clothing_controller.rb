@@ -34,7 +34,7 @@ class ClothingController < ApplicationController
   def update
     @clothing = Clothing.find(params[:id])
     @clothing.image_path = params[:image_path]
-    @clothing.update(params)
+    @clothing.update_attributes(params[:clothing])
     if @clothing.save
       redirect_to :action => 'index'
     else
