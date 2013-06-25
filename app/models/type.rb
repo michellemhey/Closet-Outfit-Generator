@@ -3,4 +3,6 @@ class Type < ActiveRecord::Base
   belongs_to :type_class
   has_many :clothing
 
+  validates :name, :presence => true
+  validates :type_class_id, :presence => true
 end

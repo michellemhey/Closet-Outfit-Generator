@@ -10,7 +10,7 @@ def with_ivars(fabricator)
   Fabrication::Cucumber::Fabrications[model.singularize.gsub(/\W+/,'_').downcase] = @they.last
 end
 
-Given /^(\d+) ([^"]*)$/ do |count, model_name|
+Given /^(\d+) ([^\"]*)$/ do |count, model_name|
   with_ivars Fabrication::Cucumber::StepFabricator.new(model_name) do |fab|
     fab.n(count.to_i)
   end
