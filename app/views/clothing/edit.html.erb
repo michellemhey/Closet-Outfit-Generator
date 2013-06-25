@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row offset2">
+    <div id="clothingedit">
+
+      <h1>Edit Clothing</h1>
+      <div class="btn-group">
+        <%= link_to "Edit Clothing", { :action => 'edit' }, :class => "btn btn-inverse" %>
+        <%= link_to "Delete Clothing", @clothing, :method => :delete, :class => "btn btn-inverse" %>
+        <%= link_to "Back to Clothing List", { :controller => "clothings", :action => "index" }, :class => "btn btn-inverse" %>
+      </div>
+      <%= form_for @clothing do |f| %>
+
+        <%= f.label :name, "Clothing Name" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description %>
+
+        <% @types.each do |type| %>
+          <%= radio_button_tag(:type_id, type.id) %> 
+          <%= type.name %><br />
+        <% end %>
+
+        <%= f.submit "Update Clothing", url: clothing_path, :method => :put %>
+        <%= link_to("<button>Back to Clothing List</button>".html_safe, { :controller => "clothings", :action => "index" }) %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -4,10 +4,10 @@
       <div id="clothingnew">
         <%= f.label :name, "Clothing Name" %>
           <%= f.text_field :name %>
-        <%= f.label :description, "Clothing Description" %><br />
+        <%= f.label :description, "Clothing Description" %>
           <%= f.text_field :description %><br />
-        <%= f.label :image_path, "Upload Image of Clothing" %>    
-          <%= f.file_field :image_path %><br />
+        <%= f.label :image_path, "Upload Image of Clothing" %><br />
+        <%= f.file_field :image_path %><br />
       <br />
         <% @types.each do |type| %>
           <%= radio_button_tag(:type_id, type.id) %> 

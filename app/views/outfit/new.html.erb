@@ -7,14 +7,11 @@
             <div class="carousel-inner">
               <% @tops.each_with_index do |top, i| %>
                 <div 
+                id='clothings[]=<%= top.id %>'
                 class="
-                  <% if @selected.nil? %>
-                    <% if i == 0  %>
+                    <% if i == 0 %>
                     active 
                     <% end %>
-                  <% elsif @selected.contains(top) %> 
-                    class="active item"
-                  <% end %>
                   item"
                 >
                     <p id="imageslideone">Top: <%= top.name %> <%= image_tag top.image_path_url%></p>
@@ -33,14 +30,11 @@
             <div class="carousel-inner">
               <% @bottoms.each_with_index do |bottom, i| %>
                 <div 
+                id='clothings[]=<%= bottom.id %>'
                 class="
-                  <% if @selected.nil? %>
-                    <% if i == 0  %>
-                    active 
+                    <% if i == 0 %>
+                      active 
                     <% end %>
-                  <% elsif @selected.contains(bottom) %> 
-                    class="active item"
-                  <% end %>
                   item"
                 >
                   <p id="imageslidetwo">Bottom: <%= bottom.name %> <%= image_tag bottom.image_path_url%></p>
@@ -59,14 +53,11 @@
             <div class="carousel-inner">
               <% @shoes.each_with_index do |shoe, i| %>
                 <div 
+                id='clothings[]=<%= shoe.id %>'
                 class="
-                  <% if @selected.nil? %>
-                    <% if i == 0  %>
-                    active 
+                    <% if i == 0 %>
+                      active 
                     <% end %>
-                  <% elsif @selected.contains(shoe) %> 
-                    class="active item"
-                  <% end %>
                   item"
                 >
                   <p id="imageslidethree">Shoe: <%= shoe.name %> <%= image_tag shoe.image_path_url%></p>

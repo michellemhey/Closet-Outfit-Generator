@@ -7,6 +7,10 @@ RubyClosetIi::Application.routes.draw do
   resources :clothing 
   resources :outfit
   
+  match '/outfit/:id/favorite' => 'outfit#set_favorite', :via => :put
+  match '/outfit/:id/favorite' => 'outfit#unset_favorite', :via => :delete
+  match '/outfit/:id/favorite' => 'outfit#get_favorite', :via => :get
+  
   # authenticated :user do
   #   root :to => 'home#index'
   # end

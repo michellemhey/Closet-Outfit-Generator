@@ -19,7 +19,7 @@ class ClothingController < ApplicationController
     @clothing.type = Type.find(params[:type_id])
     @clothing.user = current_user
     if @clothing.save
-      redirect_to :action => 'index'
+      redirect_to @clothing
     else
       @types = Type.all
       render :action => 'new'

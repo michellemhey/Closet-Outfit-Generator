@@ -3,10 +3,4 @@ class Outfit < ActiveRecord::Base
 
   has_and_belongs_to_many :clothings
   belongs_to :user
-
-  def toggle_favorite
-    @outfit = Outfit.find(params[:id])
-    @outfit.is_favorite = !@outfit.is_favorite
-    @outfit.save
-  end
 end

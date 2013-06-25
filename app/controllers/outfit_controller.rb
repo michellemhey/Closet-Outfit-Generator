@@ -7,6 +7,8 @@ class OutfitController < ApplicationController
     @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id).shuffle!
   end
 
+#We might use this in the future -- Dont delete
+#Yes, I know this is bad VC policy
 =begin
   def generate
     outfit_type = rand(2)
@@ -34,11 +36,19 @@ class OutfitController < ApplicationController
   end
 =end
   def create
-    @outfit = Outfit.new(params[:outfit])
-    @outfit = Clothing.find(params[:clothing_id])
-    if @outfit.save
-      redirect_to :action => 'index'
+    failed = false
+    
+    if Outfit.create(params[:outfit])
+      if @outfit.clothing_id << Clothing.find(params[:clothing_id])
+        redirect_to @outfit
+      else
+        failed = true
+      end
     else
+      failed = true
+    end
+
+    if failed
       @tops = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'top', :user_id => current_user.id)
       @bottoms = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'btm', :user_id => current_user.id)
       @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id)
@@ -55,7 +65,7 @@ class OutfitController < ApplicationController
     @outfit = Outfit.find(params[:id])
     @outfit.update(params)
     if @outfit.save
-      redirect_to :action => 'index'
+      redirect_to :action => 's'
     else
       @clothings = Clothing.all
       render :action => 'edit'
@@ -76,5 +86,21 @@ class OutfitController < ApplicationController
     if @outfit.destroy
       redirect_to :action => 'index'
     end
+  end
+
+  def set_favorite
+    @outfit = Outfit.find_or_create(params[:outfit])
+    @outfit.is_favorite = true
+    @outfit.save
+  end
+
+  def unset_favorite
+    @outfit = Outfit.find(params[:id])
+    @outfit.is_favorite = false
+    @outfit.save
+  end
+
+  def get_favorite
+    @is_favorite = Outfit.find(params[:id]).is_favorite
   end
 end
