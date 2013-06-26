@@ -8,4 +8,8 @@ class Clothing < ActiveRecord::Base
   validates :name, :presence => true
   validates :type_id, :presence => true
   validates :user_id, :presence => true
+
+  def self.get_by_type_class(type_class, user_id)
+    Clothing.joins(:type => :type_class).where('type_classes.symbol' => type_class, :user_id => user_id)
+  end
 end

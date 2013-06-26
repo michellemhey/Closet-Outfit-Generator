@@ -5,11 +5,8 @@
       <div id="slider" data-interval="false" class="carousel slide">
         <div class="carousel-inner">
           <% @tops.each_with_index do |top, i| %>
-            <div id='clothings[]=<%=top.id %>' 
-            class="<% if i == 0 %>
-              active
-              <% end %>
-            item">
+          <div id='clothings[]=<%=top.id %>' 
+            class="<% if i == 0 %>active<% end %> item">
             Top: <%= top.name %> <%= image_tag top.image_path_url, :size => '140x140' %>
           </div>
           <% end %>
@@ -57,12 +54,24 @@
 
           <div class="span3">  
             <div class="btn-group">
-              <button class="btn">Favorite</button>
-              <button class="btn">Generate</button>
-              <button class="btn">Select</button>
+              <button onclick='location.reload();' class="btn">Generate Another</button><br/>
+              <button onclick='generatePost(true, false);' class="btn">Favorite for Later!</button><br/>
+              <button onclick='generatePost(false, true);' class="btn">Wear it Now!!</button><br/>
+              <button onclick='generatePost(true, true);' class="btn">Favorite and Wear!!!</button>
             </div>
           </div>
         </div>
 
   </div>
 </div>
+
+<script>
+  function generatePost(is_favorite, wear_now) {
+    tp = $('#slider .active').attr('id')
+    btm = $('#sliderTwo .active').attr('id')
+    shu = $('#sliderThree .active').attr('id')
+    parameters = tp + "&" + btm + "&" + shu + "&is_favorite=" + is_favorite + "&wear_now=" + wear_now
+    alert(parameters)
+    $.post('/outfit', parameters, function() { alert ("Saved!") }); 
+  }
+</script>

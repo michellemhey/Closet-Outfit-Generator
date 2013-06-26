@@ -1,45 +1,30 @@
 class OutfitController < ApplicationController
 
   def new
-    @putfit = Outfit.new(params[:outfit])
-    @tops = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'top', :user_id => current_user.id).shuffle!
-    @bottoms = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'btm', :user_id => current_user.id).shuffle!
-    @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id).shuffle!
+    @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
+    @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
+    @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
   end
 
-#We might use this in the future -- Dont delete
-#Yes, I know this is bad VC policy
-=begin
-  def generate
-    outfit_type = rand(2)
-    if outfit_type == 0
-      tops = Clothing.joins('INNER JOIN types ON clothings.type_id = types.id').joins('INNER JOIN type_classes ON types.type_class_id = type_classes.id' ).where('type_classes.symbol' => 'top')
-
-      bottoms = Clothing.joins('INNER JOIN types ON clothings.type_id = types.id').joins('INNER JOIN type_classes ON types.type_class_id = type_classes.id' ).where('type_classes.symbol' => 'btm')
-
-      shoes = Clothing.joins('INNER JOIN types ON clothings.type_id = types.id').joins('INNER JOIN type_classes ON types.type_class_id = type_classes.id' ).where('type_classes.symbol' => 'shu')
-      
-      @selected = []
-      @selected << tops.shuffle.first
-      @selected << bottoms.shuffle.first
-      @selected << shoes.shuffle.first
-
-    elsif outfit_type == 1
-      full_outfits = Clothing.joins('INNER JOIN types ON clothings.type_id = types.id').joins('INNER JOIN type_classes ON types.type_class_id = type_classes.id' ).where('type_classes.symbol' => 'full')
-
-      shoes = Clothing.joins('INNER JOIN types ON clothings.type_id = types.id').joins('INNER JOIN type_classes ON types.type_class_id = type_classes.id' ).where('type_classes.symbol' => 'shu')
-
-      @selected = []
-      @selected << @full_outfits.shuffle.first
-      @selected << @shoes.shuffle.first
-    end
+  def filter
+    @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
+    @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
+    @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
+    render :action => 'new'
   end
-=end
+
   def create
     failed = false
-    
-    if Outfit.create(params[:outfit])
-      if @outfit.clothing_id << Clothing.find(params[:clothing_id])
+    @outfit = Outfit.new
+    @outfit.is_favorite = params[:is_favorite]
+    @outfit.user = current_user
+    if (params[:wear_now])
+      @outfit.last_worn = Time.now()
+    end
+    if @outfit.save
+      clothings = params[:clothings].map { |id| Clothing.find(Integer(id)) }
+      if @outfit.clothings << clothings
+        print("Injected.")
         redirect_to @outfit
       else
         failed = true
@@ -49,9 +34,9 @@ class OutfitController < ApplicationController
     end
 
     if failed
-      @tops = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'top', :user_id => current_user.id)
-      @bottoms = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'btm', :user_id => current_user.id)
-      @shoes = Clothing.joins(:type => :type_class).where('type_classes.symbol' => 'shu', :user_id => current_user.id)
+      @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
+      @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
+      @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
       render :action => 'new'
     end
   end
