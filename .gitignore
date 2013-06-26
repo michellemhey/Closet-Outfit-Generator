@@ -22,5 +22,4 @@
 #*#
 
 # Ignore uploaded pictures from CarrierWave
-public/assets/uploads
-public/assets/images
+
