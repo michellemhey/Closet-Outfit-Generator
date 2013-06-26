@@ -10,4 +10,3 @@
  else
    RubyClosetIi::Application.config.secret_token = ENV['SECRET_TOKEN']
  end
-
