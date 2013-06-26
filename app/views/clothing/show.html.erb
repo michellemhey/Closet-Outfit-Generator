@@ -5,6 +5,7 @@
 			<p>Clothing: <%= @clothing.name %></p>
 			<p>Description: <%= @clothing.description if @clothing.description %></p>
 			<p>Type: <%= @clothing.type.name %></p>
+			<p>Temperatures: <% @clothing.temperatures.each do |temp| %><%= temp.label %>, <% end %>
 			<p id="imageitem">Image: <img src="<%= @clothing.image_path %>"/></p>
 			<%= button_to "edit" , edit_clothing_path, :method => :get  %>
 			<%= button_to "delete", @clothing, :method => :delete%>

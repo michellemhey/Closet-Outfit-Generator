@@ -13,7 +13,11 @@
           <%= radio_button_tag(:type_id, type.id) %> 
           <%= type.name %><br />
         <% end %>
-
+      <br/>
+        <% @temperatures.each do |temp| %>
+          <%= check_box_tag "temperature_ids[]", temp.id, @clothing.temperatures.include?(temp)%>
+          <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
+        <% end %>
         <%#= collection_select(:clothing, :type_id, Type.all, :id, :name, prompt: true) %>
       <br />
         <%= f. submit "Add Clothing" %>

@@ -3,6 +3,7 @@ class Clothing < ActiveRecord::Base
   belongs_to :type
   belongs_to :user
   has_and_belongs_to_many :outfits
+  has_and_belongs_to_many :temperatures
   mount_uploader :image_path, ImageUploader
 
   validates :name, :presence => true

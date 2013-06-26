@@ -10,6 +10,7 @@ class ClothingController < ApplicationController
 
   def new
     @types = Type.all
+    @temperatures = Temperature.all
     @clothing = Clothing.new
   end
 
@@ -19,6 +20,7 @@ class ClothingController < ApplicationController
     @clothing.type = Type.find(params[:type_id])
     @clothing.user = current_user
     if @clothing.save
+      @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))}
       redirect_to @clothing
     else
       @types = Type.all
@@ -29,6 +31,7 @@ class ClothingController < ApplicationController
   def edit
     @clothing = Clothing.find(params[:id])
     @types = Type.all
+    @temperatures = Temperature.all
   end
 
   def update
