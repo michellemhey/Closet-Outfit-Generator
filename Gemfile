@@ -15,6 +15,7 @@ gem "omniauth", "~> 1.1.4"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'flash_cookie_session'
+gem "webrat", "~> 0.7.3" 
 
 gem "haml", "~> 4.0.3"
 
