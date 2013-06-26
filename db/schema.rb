@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623003401) do
+ActiveRecord::Schema.define(:version => 20130626020055) do
 
   create_table "clothings", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20130623003401) do
 
   add_index "clothings_outfits", ["clothing_id", "outfit_id"], :name => "index_clothings_outfits_on_clothing_id_and_outfit_id"
   add_index "clothings_outfits", ["outfit_id"], :name => "index_clothings_outfits_on_outfit_id"
+
+  create_table "clothings_temperatures", :id => false, :force => true do |t|
+    t.integer "clothing_id"
+    t.integer "temperature_id"
+  end
+
+  add_index "clothings_temperatures", ["clothing_id", "temperature_id"], :name => "index_clothings_temperatures_on_clothing_id_and_temperature_id"
+  add_index "clothings_temperatures", ["temperature_id"], :name => "index_clothings_temperatures_on_temperature_id"
 
   create_table "images", :force => true do |t|
     t.integer  "image_id"
@@ -54,6 +62,14 @@ ActiveRecord::Schema.define(:version => 20130623003401) do
     t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "temperatures", :force => true do |t|
+    t.string   "label"
+    t.integer  "low"
+    t.integer  "high"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "type_classes", :force => true do |t|
