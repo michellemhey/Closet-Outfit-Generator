@@ -22,4 +22,4 @@
 #*#
 
 # Ignore uploaded pictures from CarrierWave
-
+public/uploads/*
