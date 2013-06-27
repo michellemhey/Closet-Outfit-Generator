@@ -4,12 +4,24 @@ class OutfitController < ApplicationController
     @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
     @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
     @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
+
+    @temperatures = Temperature.all
+    @filter_temps = []
   end
 
   def filter
-    @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
-    @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
-    @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
+    @filter_temps = params[:temperature_ids]
+    @temperatures = Temperature.all
+
+    #Get basic clothes
+    @tops = Clothing.get_by_type_class('top', current_user.id) 
+    @bottoms = Clothing.get_by_type_class('top', current_user.id)
+    @shoes = Clothing.get_by_type_class('top', current_user.id) 
+
+    #Apply filters
+    @tops = @tops.select { |top| (top.temperature_ids & @filter_temps).empty? }
+    @bottoms = @bottoms.select {|top| (top.temperature_ids & @filter_temps).empty? }
+    @shoes = @shoes.select {|top| (top.temperature_ids & @filter_temps).empty? }
     render :action => 'new'
   end
 
@@ -43,7 +55,7 @@ class OutfitController < ApplicationController
 
   def edit
     @outfit = Outfit.find(params[:id])
-    @clothings = Clothing.all
+    @clothings = Clothing.get_by_type_class('top', current_user.id)
   end
 
   def update
@@ -59,6 +71,9 @@ class OutfitController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
+    @top = (@outfit.clothings & (Clothing.get_by_type_class('top', current_user).to_a)).first
+    @bottom = (@outfit.clothings & (Clothing.get_by_type_class('btm', current_user).to_a)).first
+    @shoes = (@outfit.clothings & (Clothing.get_by_type_class('shu', current_user).to_a)).first
   end
 
   def index

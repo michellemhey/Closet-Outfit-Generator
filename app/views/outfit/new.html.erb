@@ -1,56 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="generateCarousel">
-      <div class="span3">
-        <div id="slider" data-interval="false" class="carousel slide">
-          <div class="carousel-inner">
-            <% @tops.each_with_index do |top, i| %>
-            <div id='clothings[]=<%=top.id %>' 
-              class="<% if i == 0 %>active<% end %> item">
-              Top: <%= top.name %> <%= image_tag top.image_path_url, :size => '140x140' %>
-            </div>
-            <% end %>
-          </div>
-          <a class="left carousel-control" href="#slider" data-slide="prev">&lsaquo;</a>
-          <a class="right carousel-control" href="#slider" data-slide="next">&rsaquo;</a>
-        </div>
-      </div>
-    
-      <div class="span3">
-        <div id="sliderTwo" data-interval="false" class="carousel slide">
-          <div class="carousel-inner">
-            <% @bottoms.each_with_index do |bottom, i| %>
-              <div id='clothings[]=<%=bottom.id %>' 
-              class="<% if i == 0 %>
-                active
-                <% end %>
-              item">
-              Bottom: <%= bottom.name %> <%= image_tag bottom.image_path_url, :size => '120x120' %>
-            </div>
-            <% end %>
-          </div>
-          <a class="left carousel-control" href="#sliderTwo" data-slide="prev">&lsaquo;</a>
-          <a class="right carousel-control" href="#sliderTwo" data-slide="next">&rsaquo;</a>
-        </div>
-      </div>
-    
-      <div class="span3">
-        <div id="sliderThree" data-interval="false" class="carousel slide">
-          <div class="carousel-inner">
-            <% @shoes.each_with_index do |shoe, i| %>
-            <div id='clothings[]=<%=shoe.id %>' 
-              class="<% if i == 0 %>
-                active
-                <% end %>
-              item">
-              Shoe: <%= shoe.name %> <%= image_tag shoe.image_path_url, :size => '140x140' %>
-            </div>
-          <% end %>
-        </div>
-          <a class="left carousel-control" href="#sliderThree" data-slide="prev">&lsaquo;</a>
-          <a class="right carousel-control" href="#sliderThree" data-slide="next">&rsaquo;</a>
-        </div>
-      </div>
+      <%= render :partial => 'layouts/clothing_carousel', :locals => { :index_id => "", :clothings => @tops, :label => "Tops" } %>
+      <%= render :partial => 'layouts/clothing_carousel', :locals => { :index_id => "Two", :clothings => @bottoms, :label => "Bottoms" } %>
+      <%= render :partial => 'layouts/clothing_carousel', :locals => { :index_id => "Three", :clothings => @shoes, :label => "Shoes" } %>
     </div>
   </div>
 </div>
@@ -67,15 +20,33 @@
     </div>
   </div>
 </div>
+<div>
+  <% @temperatures.each do |temp| %>
+    <%= check_box_tag "temperature_ids_" + temp.id.to_s, temp.id, @filter_temps.include?(temp)%>
+    <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
+  <% end %>
+  <br />=
+  <button onclick='filter();' class="btn">JS Filter</button><br/>
+</div>
 
 
 <script>
-  function generatePost(is_favorite, wear_now) {
-    tp = $('#slider .active').attr('id')
-    btm = $('#sliderTwo .active').attr('id')
-    shu = $('#sliderThree .active').attr('id')
+  function saveOutfit(is_favorite, wear_now) {
+    tp = $('#slider1 .active').attr('id')
+    btm = $('#slider2 .active').attr('id')
+    shu = $('#slider3 .active').attr('id')
     parameters = tp + "&" + btm + "&" + shu + "&is_favorite=" + is_favorite + "&wear_now=" + wear_now
     alert(parameters)
-    $.post('/outfit', parameters, function() { alert ("Saved!") }); 
+    $.post('/outfit', parameters, function() { alert ("Saved!") }); //outfit#create
+  }
+
+  function filter() {
+    var post_string = ""; 
+    $("[id^=temperature_ids]:checked").each(function(i, selected) {
+      if (i > 0)
+        post_string += "&";
+      post_string += "temperature_ids[]=" + selected.value;
+    });
+    $.post('/outfit/new', post_string, function() { alert ("Saved!") }); //outfit#filter
   }
 </script>

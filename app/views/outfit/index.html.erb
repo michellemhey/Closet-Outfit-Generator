@@ -1,2 +1,15 @@
-<h1>Outfit#index</h1>
-<p>Find me in app/views/outfit/index.html.erb</p>
+<div>
+  <ul>
+    <% @outfits.each do |outfit| %>
+      <li>
+        <span>
+          <% if outfit.is_favorite %>
+            <%= image_tag "heart.png", :size => '25x25' %>
+          <% end %>
+        </span>
+        <span><%= link_to outfit.name.nil? ? "Unnamed outfit" : outfit.name, outfit %>
+        <span>Last worn: <%= outfit.last_worn.nil? ? "Never" : outfit.last_worn %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>

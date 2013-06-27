@@ -1,0 +1,14 @@
+<div class="span3">
+  <div id="slider<%= index_id %>" data-interval="false" class="carousel slide">
+    <div class="carousel-inner">
+      <% clothings.each_with_index do |clothing, i| %>
+      <div id='clothings[]=<%=clothing.id %>' 
+        class="<% if i == 0 %>active<% end %> item">
+        <%= label %>: <%= clothing.name %> <%= image_tag clothing.image_path_url, :size => '140x140' %>
+      </div>
+      <% end %>
+    </div>
+    <a class="left carousel-control" href="#slider<%= index_id %>" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#slider<%= index_id %>" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
