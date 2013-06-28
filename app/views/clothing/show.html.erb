@@ -2,11 +2,11 @@
 	<div class="row offset3">
 		<div id="clothesshow">
 			<h3>Clothing</h3>
-			<p>Clothing: <%= @clothing.name %></p>
-			<p>Description: <%= @clothing.description if @clothing.description %></p>
-			<p>Type: <%= @clothing.type.name %></p>
-			<p>Temperatures: <% @clothing.temperatures.each do |temp| %><%= temp.label %>, <% end %>
-			<p id="imageitem">Image: <img src="<%= @clothing.image_path %>"/></p>
+			<p><strong>Clothing:</strong> <%= @clothing.name %></p>
+			<p><strong>Description:</strong> <%= @clothing.description if @clothing.description %></p>
+			<p><strong>Type:</strong> <%= @clothing.type.name %></p>
+			<p><strong>Temperatures:</strong><br /> <% @clothing.temperatures.each do |temp| %><%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br /> <% end %>
+			<p id="imageitem"><strong>Image:</strong> <img src="<%= @clothing.image_path %>"/></p>
 			<%= button_to "edit" , edit_clothing_path, :method => :get  %>
 			<%= button_to "delete", @clothing, :method => :delete%>
 		</div>

@@ -12,26 +12,32 @@
   <div class="row">
     <div class="span3 offset10">  
       <div class="btn-group">
-        <button onclick='location.reload();' class="btn">Generate Another</button><br/>
-        <button onclick='generatePost(true, false);' class="btn">Favorite for Later!</button><br/>
-        <button onclick='generatePost(false, true);' class="btn">Wear it Now!!</button><br/>
-        <button onclick='generatePost(true, true);' class="btn">Favorite and Wear!!!</button>
+        <button onclick='location.reload();' class="btn">Generate New</button><br/>
+        <button onclick='generatePost(true, false);' class="btn"> Favorite Outfit</button><br/>
+        <!--<button onclick='generatePost(false, true);' class="btn">Wear it Now!!</button><br/>-->
+        <!--<button onclick='generatePost(true, true);' class="btn">Favorite and Wear</button>-->
       </div>
     </div>
   </div>
 </div>
-<%= form_for(:outfit, :url => outfit_new_path(@outfit)) do |f| %>
-  <% @temperatures.each do |temp| %>
-    <%= check_box_tag "temperature_ids[]", temp.id, @filter_temps.include?(temp)%>
-    <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
-  <% end %>
-  <% @styles.each do |style| %>
-    <%= check_box_tag "style_ids[]", style.id, @filter_styles.include?(style)%>
-    <%= style.label %><br />
-  <% end %>
-  <br />
-  <%= f. submit "JS Filter" %><br/>
-<% end %>
+<div class="genboth">
+  <%= form_for(:outfit, :url => outfit_new_path(@outfit)) do |f| %>
+    <div id="tempgen">  
+      <% @temperatures.each do |temp| %>
+        <%= check_box_tag "temperature_ids[]", temp.id, @filter_temps.include?(temp)%>
+        <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
+      <% end %>
+    </div>
+    <div id="stylegen">
+      <% @styles.each do |style| %>
+        <%= check_box_tag "style_ids[]", style.id, @filter_styles.include?(style)%>
+        <%= style.label %><br />
+      <% end %>
+      <br />
+    </div>  
+      <%= f. submit "Generate" %><br/>
+    <% end %>
+</div>
 
 
 <script>

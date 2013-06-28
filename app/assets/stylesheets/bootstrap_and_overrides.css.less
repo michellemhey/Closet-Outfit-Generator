@@ -1,154 +1,168 @@
-@import "twitter/bootstrap/bootstrap";
-@import "twitter/bootstrap/responsive";
+  @import "twitter/bootstrap/bootstrap";
+  @import "twitter/bootstrap/responsive";
 
-// Set the correct sprite paths
-@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
-@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+  // Set the correct sprite paths
+  @iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+  @iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
 
-// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
-@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot#iefix");
-@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
-@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
-@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+  // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+  @fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+  @fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot#iefix");
+  @fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+  @fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+  @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
 
-// Font Awesome
-@import "fontawesome/font-awesome";
+  // Font Awesome
+  @import "fontawesome/font-awesome";
 
-// Glyphicons
-//@import "twitter/bootstrap/sprites.less";
+  // Glyphicons
+  //@import "twitter/bootstrap/sprites.less";
 
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
+  // Your custom LESS stylesheets goes here
+  //
+  // Since bootstrap was imported above you have access to its mixins which
+  // you may use and inherit here
+  //
+  // If you'd like to override bootstrap's own variables, you can do so here as well
+  // See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+  //
+  // Example:
+  // @linkColor: #ff0000;
 
-body {
-	background-color: #daebfb;
-}
-.navbar-inverse .navbar-inner {
-  background-color: #F29A74;
-  background-image: none;
-}
+  body {
+  	background-color: #daebfb;
+  }
+  .navbar-inverse .navbar-inner {
+    background-color: #F29A74;
+    background-image: none;
+  }
 
-.navbar-inverse .brand:hover {
-	color: black;
-	text-decoration: none;
-	text-shadow: 0 1px 0 black;
-}
+  .navbar-inverse .brand:hover {
+  	color: black;
+  	text-decoration: none;
+  	text-shadow: 0 1px 0 black;
+  }
 
-.navbar .nav .navbar-inner {}
+  .navbar .nav .navbar-inner {}
 
-ul, li {
-  list-style-type: none;
-}
+  ul, li {
+    list-style-type: none;
+  }
 
-.generateCarousel {
-  margin-top: -80px;
-  margin-left: -30px;
-}
+  .generateCarousel {
+    margin-top: -130px;
+    margin-left: -30px;
+  }
 
-.carousel-inner > .active {
-    left: 115px;
-    right: 100px;
-}
+  .carousel-inner > .active {
+      left: 115px;
+      right: 100px;
+  }
 
-.style_image {
-  
-  width: 100px;
-  margin-left: 500px;
-  margin-top: -19px;
-}
+  .style_image {
+    
+    width: 100px;
+    margin-left: 500px;
+    margin-top: -19px;
+  }
 
-.style_imagetwo {
-  opacity: 0.8;
-  filter: alpha(opacity=40);
-  width: 100px;
-  margin-left: 400px;
-  margin-top: -55px;
-}
+  .style_imagetwo {
+    opacity: 0.8;
+    filter: alpha(opacity=40);
+    width: 100px;
+    margin-left: 400px;
+    margin-top: -55px;
+  }
 
-.style_imagethree {
-  opacity: 0.9;
-  filter: alpha(opacity=40);
-  width: 100px;
-  margin-left: 300px;
-  margin-top: -105px;
-}
+  .style_imagethree {
+    opacity: 0.9;
+    filter: alpha(opacity=40);
+    width: 100px;
+    margin-left: 300px;
+    margin-top: -105px;
+  }
 
-.style_imagefour {
-  opacity: 0.8;
-  filter: alpha(opacity=40);
-  width: 100px;
-  margin-left: 200px;
-  margin-top: -150px;
-}
+  .style_imagefour {
+    opacity: 0.8;
+    filter: alpha(opacity=40);
+    width: 100px;
+    margin-left: 200px;
+    margin-top: -150px;
+  }
 
-.style_imagefive {
-  opacity: 0.8;
-  filter: alpha(opacity=40);
-  width: 100px;
-  margin-left: -150px;
-  margin-top: -135px;
-}
+  .style_imagefive {
+    opacity: 0.8;
+    filter: alpha(opacity=40);
+    width: 100px;
+    margin-left: -150px;
+    margin-top: -135px;
+  }
 
-.style_imagesix {
-  opacity: 0.9;
-  filter: alpha(opacity=40);
-  width: 100px;
-  margin-left: -140px;
-  margin-top: -145px;
-}
+  .style_imagesix {
+    opacity: 0.9;
+    filter: alpha(opacity=40);
+    width: 100px;
+    margin-left: -140px;
+    margin-top: -145px;
+  }
 
-#wear {
-  font-size: 24px;
-  margin-top: 10px;
-  margin-left: 150px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: gray;
-}
+  #wear {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 150px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: gray;
+  }
 
-#clothingnew {
-  margin-top: -150px;
-}
+  #clothingnew {
+    margin-top: -150px;
+  }
 
-#clothingindex {
-  margin-top: -150px;
-}
+  #clothingindex {
+    margin-top: -150px;
+  }
 
-.usereditprofile {
-  margin-top: -220px;
-}
+  .usereditprofile {
+    margin-top: -220px;
+  }
 
-#clothesshow {
-  margin-top: -150px;
-}
+  #clothesshow {
+    margin-top: -150px;
+  }
 
-#imageitem {
-  width: 150px;
-}
+  #imageitem {
+    width: 150px;
+  }
 
-#outfitgen {
-  margin-top: -150px;
-}
+  #outfitgen {
+    margin-top: -150px;
+  }
 
-.carousel       {
-  width: 320px;
-  height: 200px;
-}
+  .carousel       {
+    width: 320px;
+    height: 200px;
+  }
 
-.generateMenu {
-  margin-top: -100px;
-  margin-left: -50px;
-}
+  .generateMenu {
+    margin-top: -100px;
+    margin-left: -50px;
+  }
 
-.wardrobe {
-  margin-top: 50px;
-  width: 400px; 
+  #wardrobe {
+    margin-top: -70px;
+    width: 350px;
+    margin-left: 80px;
+  }
+
+  #stylegen {
+    margin-left: 220px;
+    margin-top: -80px;
+  }
+
+  #tempgen {
+    margin-top: 30px;
+  }
+
+.genboth {
+  margin-top: 100px;
 }
