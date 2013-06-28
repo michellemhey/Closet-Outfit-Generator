@@ -25,6 +25,10 @@
     <%= check_box_tag "temperature_ids[]", temp.id, @filter_temps.include?(temp)%>
     <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
   <% end %>
+  <% @styles.each do |style| %>
+    <%= check_box_tag "style_ids[]", style.id, @filter_styles.include?(style)%>
+    <%= style.label %><br />
+  <% end %>
   <br />
   <%= f. submit "JS Filter" %><br/>
 <% end %>
@@ -38,15 +42,5 @@
     parameters = tp + "&" + btm + "&" + shu + "&is_favorite=" + is_favorite + "&wear_now=" + wear_now
     alert(parameters)
     $.post('/outfit', parameters, function() { alert ("Saved!") }); //outfit#create
-  }
-
-  function filter() {
-    var post_string = ""; 
-    $("[id^=temperature_ids]:checked").each(function(i, selected) {
-      if (i > 0)
-        post_string += "&";
-      post_string += "temperature_ids[]=" + selected.value;
-    });
-    $.post('/outfit/new', post_string, function() { alert ("Saved!") }); //outfit#filter
   }
 </script>

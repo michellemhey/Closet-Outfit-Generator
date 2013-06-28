@@ -19,6 +19,11 @@
           <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
         <% end %>
       <br />
+        <% @styles.each do |style| %>
+          <%= check_box_tag "style_ids[]", style.id, @clothing.styles.include?(style)%>
+          <%= style.label %><br />
+        <% end %>
+      <br />
         <%= f. submit "Add Clothing" %>
       </div><br />
     <% end %>

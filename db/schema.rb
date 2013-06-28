@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626020055) do
+ActiveRecord::Schema.define(:version => 20130628021157) do
 
   create_table "clothings", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20130626020055) do
 
   add_index "clothings_outfits", ["clothing_id", "outfit_id"], :name => "index_clothings_outfits_on_clothing_id_and_outfit_id"
   add_index "clothings_outfits", ["outfit_id"], :name => "index_clothings_outfits_on_outfit_id"
+
+  create_table "clothings_styles", :id => false, :force => true do |t|
+    t.integer "clothing_id"
+    t.integer "style_id"
+  end
+
+  add_index "clothings_styles", ["clothing_id", "style_id"], :name => "index_clothings_styles_on_clothing_id_and_style_id"
+  add_index "clothings_styles", ["style_id"], :name => "index_clothings_styles_on_style_id"
 
   create_table "clothings_temperatures", :id => false, :force => true do |t|
     t.integer "clothing_id"
@@ -62,6 +70,12 @@ ActiveRecord::Schema.define(:version => 20130626020055) do
     t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "styles", :force => true do |t|
+    t.string   "label"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "temperatures", :force => true do |t|

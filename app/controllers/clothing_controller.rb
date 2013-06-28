@@ -11,6 +11,7 @@ class ClothingController < ApplicationController
   def new
     @types = Type.all
     @temperatures = Temperature.all
+    @styles = Style.all
     @clothing = Clothing.new
   end
 
@@ -20,10 +21,17 @@ class ClothingController < ApplicationController
     @clothing.type = Type.find(params[:type_id])
     @clothing.user = current_user
     if @clothing.save
-      @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))}
+      if !params[:temperature_ids].nil?
+        @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))}
+      end
+      if !params[:style_ids].nil?
+        @clothing.styles << params[:style_ids].map {|id| Style.find(Integer(id))}
+      end
       redirect_to @clothing
     else
       @types = Type.all
+      @temperatures = Temperature.all
+      @styles = Style.all
       render :action => 'new'
     end
   end
@@ -32,6 +40,7 @@ class ClothingController < ApplicationController
     @clothing = Clothing.find(params[:id])
     @types = Type.all
     @temperatures = Temperature.all
+    @styles = Style.all
   end
 
   def update
@@ -39,6 +48,12 @@ class ClothingController < ApplicationController
     @clothing.image_path = params[:image_path]
     @clothing.update_attributes(params[:clothing])
     if @clothing.save
+      if !params[:temperature_ids].nil?
+        @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))}
+      end
+      if !params[:style_ids].nil?
+        @clothing.styles << params[:style_ids].map {|id| Style.find(Integer(id))}
+      end
       redirect_to :action => 'index'
     else
       @types = Type.all
