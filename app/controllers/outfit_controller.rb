@@ -12,7 +12,7 @@ class OutfitController < ApplicationController
   end
 
   def filter
-
+    #filter posts back to new page.
     @temperatures = Temperature.all
     @styles = Style.all
 
@@ -20,18 +20,15 @@ class OutfitController < ApplicationController
     @tops = Clothing.get_by_type_class('top', current_user.id)
     @bottoms = Clothing.get_by_type_class('btm', current_user.id)
     @shoes = Clothing.get_by_type_class('shu', current_user.id)
-
     if params[:temperature_ids].nil? or params[:temperature_ids].empty?
       @filter_temps = []
     else
       @filter_temps = params[:temperature_ids].map {|x| Integer(x)}
-      
       #Apply filters (temperature)
       @tops = @tops.select { |top| !(top.temperature_ids & @filter_temps).empty? }
       @bottoms = @bottoms.select {|bottom| !(bottom.temperature_ids & @filter_temps).empty? }
       @shoes = @shoes.select {|shoe| !(shoe.temperature_ids & @filter_temps).empty? }
     end
-
     if params[:style_ids].nil? or params[:style_ids].empty?
       @filter_styles = []
     else

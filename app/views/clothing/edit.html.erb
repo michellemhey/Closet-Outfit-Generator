@@ -10,11 +10,23 @@
 
         <%= f.label :description, "Description" %>
         <%= f.text_area :description %><br />
+        <%= f.label :image_path, "Upload Image of Clothing" %><br />
+        <%= f.file_field :image_path %><br />
 
         <% @types.each do |type| %>
           <%= radio_button_tag(:type_id, type.id) %> 
           <%= type.name %><br />
-        <% end %>
+        <% end %><br />
+
+        <% @temperatures.each do |temp| %>
+          <%= check_box_tag "temperature_ids[]", temp.id, @clothing.temperatures.include?(temp)%>
+          <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
+        <% end %><br />
+
+        <% @styles.each do |style| %>
+          <%= check_box_tag "style_ids[]", style.id, @clothing.styles.include?(style)%>
+          <%= style.label %><br />
+        <% end %><br />
 
         <%= f.submit "Update Clothing", url: clothing_index_path, :method => :put %>
         <%= link_to("Back to Clothing List".html_safe, { :controller => "clothing", :action => "index" }) %>

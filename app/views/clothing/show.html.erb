@@ -5,7 +5,15 @@
 			<p><strong>Clothing:</strong> <%= @clothing.name %></p>
 			<p><strong>Description:</strong> <%= @clothing.description if @clothing.description %></p>
 			<p><strong>Type:</strong> <%= @clothing.type.name %></p>
-			<p><strong>Temperatures:</strong><br /> <% @clothing.temperatures.each do |temp| %><%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br /> <% end %>
+			<p><strong>Temperatures:</strong><br /> 
+				<% @clothing.temperatures.each do |temp| %>
+				  <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br /> 
+				<% end %><br /></p>
+			<p><strong>Style:</strong><br />
+				<% @clothing.styles.each do |style| %>
+				  <%= style.label %><br />
+				<% end %>
+			</p>
 			<p id="imageitem"><strong>Image:</strong> <img src="<%= @clothing.image_path %>"/></p>
 			<%= button_to "edit" , edit_clothing_path, :method => :get  %>
 			<%= button_to "delete", @clothing, :method => :delete%>

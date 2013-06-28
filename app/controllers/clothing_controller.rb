@@ -68,8 +68,4 @@ class ClothingController < ApplicationController
       redirect_to :action => 'index'
     end
   end
-
-  def upload
-    
-  end
 end
