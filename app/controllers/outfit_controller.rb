@@ -10,19 +10,34 @@ class OutfitController < ApplicationController
   end
 
   def filter
-    @filter_temps = params[:temperature_ids]
+
     @temperatures = Temperature.all
 
-    #Get basic clothes
-    @tops = Clothing.get_by_type_class('top', current_user.id) 
-    @bottoms = Clothing.get_by_type_class('top', current_user.id)
-    @shoes = Clothing.get_by_type_class('top', current_user.id) 
+    if params[:temperature_ids].nil? or params[:temperature_ids].empty?
+      @filter_temps = []
+      @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
+      @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
+      @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
+    else
+      @filter_temps = params[:temperature_ids].map {|x| Integer(x)}
 
-    #Apply filters
-    @tops = @tops.select { |top| (top.temperature_ids & @filter_temps).empty? }
-    @bottoms = @bottoms.select {|top| (top.temperature_ids & @filter_temps).empty? }
-    @shoes = @shoes.select {|top| (top.temperature_ids & @filter_temps).empty? }
+      #Get basic clothes
+      @tops = Clothing.get_by_type_class('top', current_user.id) 
+      @bottoms = Clothing.get_by_type_class('btm', current_user.id)
+      @shoes = Clothing.get_by_type_class('shu', current_user.id) 
+
+      #Apply filters
+      @tops = @tops.select { |top| !(top.temperature_ids & @filter_temps).empty? }
+      @bottoms = @bottoms.select {|bottom| !(bottom.temperature_ids & @filter_temps).empty? }
+      @shoes = @shoes.select {|shoe| !(shoe.temperature_ids & @filter_temps).empty? }
+
+      #Randomize
+      @tops = @tops.shuffle!
+      @bottoms = @bottoms.shuffle!
+      @shoes = @shoes.shuffle!
+    end
     render :action => 'new'
+
   end
 
   def create

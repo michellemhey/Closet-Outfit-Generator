@@ -1,0 +1,226 @@
+LOG:  database system was shut down at 2013-05-29 13:58:35 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_production" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+LOG:  database system was interrupted; last known up at 2013-06-11 14:35:17 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/18071D8
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_development" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "ruby_closet_II" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  role "closet_generator" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_development" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_production" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+FATAL:  database "closet_generator_test" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-15 11:31:26 CDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+LOG:  database system was interrupted; last known up at 2013-06-16 13:52:13 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1CC8280
+LOG:  redo is not required
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+LOG:  database system was interrupted; last known up at 2013-06-17 20:42:14 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1D14E00
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "clothings" does not exist at character 315
+STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+	              FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	             WHERE a.attrelid = '"clothings"'::regclass
+	               AND a.attnum > 0 AND NOT a.attisdropped
+	             ORDER BY a.attnum
+	
+ERROR:  relation "clothings" does not exist at character 315
+STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+	              FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	             WHERE a.attrelid = '"clothings"'::regclass
+	               AND a.attnum > 0 AND NOT a.attisdropped
+	             ORDER BY a.attnum
+	
+FATAL:  database "ruby_closet_II_test" does not exist
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-19 08:40:35 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-20 08:30:22 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  database system was interrupted; last known up at 2013-06-22 17:14:17 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1E43718
+LOG:  redo is not required
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  column clothings.clothing_type_id does not exist at character 46
+STATEMENT:  SELECT "clothings".* FROM "clothings"  WHERE "clothings"."clothing_type_id" = 1
+ERROR:  column clothings.clothing_type_id does not exist at character 46
+STATEMENT:  SELECT "clothings".* FROM "clothings"  WHERE "clothings"."clothing_type_id" = 1
+ERROR:  column clothings.clothing_type_id does not exist at character 46
+STATEMENT:  SELECT "clothings".* FROM "clothings"  WHERE "clothings"."clothing_type_id" = 1
+ERROR:  column clothings.type_class_id does not exist at character 46
+STATEMENT:  SELECT "clothings".* FROM "clothings"  WHERE "clothings"."type_class_id" = 1
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-23 09:39:01 CDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  column type_classes.type_id does not exist at character 127
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."type_id" = "types"."id" WHERE "type_class"."symbol" = 'top'
+ERROR:  column type_classes.type_id does not exist at character 127
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."type_id" = "types"."id" WHERE "type_class"."symbol" = 'top'
+ERROR:  column type_classes.type_id does not exist at character 127
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."type_id" = "types"."id" INNER JOIN "types" "types_type_classes" ON "types_type_classes"."id" = "type_classes"."type_id" WHERE "type_class"."symbol" = 'full'
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id WHERE "type_classes"."symbol" = 'full'
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id WHERE "type_classes"."symbol" = 'full'
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id
+ERROR:  missing FROM-clause entry for table "type" at character 115
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN types ON clothings.type_id = types.id INNER JOIN type_classes ON type.type_class_id = type_classes.id WHERE (1=1)
+ERROR:  column type_classes.type_id does not exist at character 60
+STATEMENT:  SELECT "types".* FROM "types" INNER JOIN "type_classes" ON "type_classes"."type_id" = "types"."id" WHERE "types"."symbol" = 'top'
+ERROR:  column type_classes.type_id does not exist at character 60
+STATEMENT:  SELECT "types".* FROM "types" INNER JOIN "type_classes" ON "type_classes"."type_id" = "types"."id" WHERE (type_classes.symbol = 'top')
+ERROR:  column types.symbol does not exist at character 112
+STATEMENT:  SELECT "types".* FROM "types" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "types"."symbol" = 'top'
+ERROR:  column types.user_id does not exist at character 148
+STATEMENT:  SELECT "types".* FROM "types" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "types"."user_id" = 9
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+LOG:  database system was interrupted; last known up at 2013-06-23 21:03:47 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1F8B0C8
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+FATAL:  database "ruby_closet_II_test" does not exist
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 240
+STATEMENT:  SELECT COUNT(*) FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'btm' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 240
+STATEMENT:  SELECT COUNT(*) FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'btm' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'btm' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."outfit_id" = '3'
+ERROR:  column clothings.outfit_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'btm' AND "clothings"."user_id" = 9 AND "clothings"."outfit_id" = 8
+ERROR:  column clothings.temperature_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."temperature_id" IS NULL
+ERROR:  column clothings.temperature_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."temperature_id" IS NULL
+ERROR:  column clothings.temperature_id does not exist at character 245
+STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."temperature_id" IS NULL

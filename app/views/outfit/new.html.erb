@@ -20,14 +20,14 @@
     </div>
   </div>
 </div>
-<div>
+<%= form_for(:outfit, :url => outfit_new_path(@outfit)) do |f| %>
   <% @temperatures.each do |temp| %>
-    <%= check_box_tag "temperature_ids_" + temp.id.to_s, temp.id, @filter_temps.include?(temp)%>
+    <%= check_box_tag "temperature_ids[]", temp.id, @filter_temps.include?(temp)%>
     <%= temp.label %> (<%= temp.low %>ºF - <%= temp.high %>ºF)<br />
   <% end %>
-  <br />=
-  <button onclick='filter();' class="btn">JS Filter</button><br/>
-</div>
+  <br />
+  <%= f. submit "JS Filter" %><br/>
+<% end %>
 
 
 <script>
