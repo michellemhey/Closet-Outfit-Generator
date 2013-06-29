@@ -224,3 +224,5 @@ ERROR:  column clothings.temperature_id does not exist at character 245
 STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."temperature_id" IS NULL
 ERROR:  column clothings.temperature_id does not exist at character 245
 STATEMENT:  SELECT "clothings".* FROM "clothings" INNER JOIN "types" ON "types"."id" = "clothings"."type_id" INNER JOIN "type_classes" ON "type_classes"."id" = "types"."type_class_id" WHERE "type_classes"."symbol" = 'top' AND "clothings"."user_id" = 8 AND "clothings"."temperature_id" IS NULL
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 786) running in data directory "/usr/local/var/postgres"?
