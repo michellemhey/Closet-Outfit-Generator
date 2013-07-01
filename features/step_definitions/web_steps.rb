@@ -15,8 +15,8 @@ When "show me the page" do
   save_and_open_page
 end
 
-When(/^I (?:click|press) "(.*?)"$/) do |text|
-  click_link_or_button text
+When /^I (?:click|press) "(.*?)"$/ do |text|
+  click_link "Sign up"
 end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_named, value|
@@ -27,7 +27,7 @@ When(/^I fill in "(.*?)" for "(.*?)"$/) do |value, field_named|
   fill_in field_named, with: value
 end
 
-Then(/^I should see "(.*?)"$/) do |content|
+Then (/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
 end
 
