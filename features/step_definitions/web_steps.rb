@@ -25,3 +25,13 @@ Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
 end
 
+Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
+  user = User.create( email: email, password: password )
+  refute user.new_record?
+end
+
+Then(/^I should not see "(.*?)"$/) do |content|
+  page.should_not have_content(content)
+end
+
+
