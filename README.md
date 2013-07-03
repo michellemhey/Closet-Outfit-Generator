@@ -9,13 +9,9 @@ This is my final capstone project for the Nashville Software School Cohort 2. I 
 Usage:
 ======
 
-This is a standard Rails app:
+To access app, go to the link below and Sign up for a new account:
 
-1. git clone
-2. rake db:create
-3. rake db:migrate
-4. rails server
-5. Go to localhost:3000
+http://rubycloset.herokuapp.com/ 
 
 Features:
 =========
