@@ -38,15 +38,32 @@ Then(/^I should not see "(.*?)"$/) do |content|
   page.should_not have_content(content)
 end
 
-When(/^I click "(.*?)" radio button$/) do |button|
-  
+When(/^I click "(.*?)" radio button$/) do |button|  
 end
 
 Then(/^I should see the "(.*?)" radio button selected$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I should see the "(.*?)" check box selected$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given(/^the piece of clothing "(.*?)" has been created$/) do |name|
+  clothing = Clothing.create( name: name)
 end
+
+When(/^I log in as "(.*?)" with password "(.*?)"$/) do |email, password|
+  click_link_or_button "Login"
+  fill_in "Email", with: email
+  fill_in "Password", with: password
+  click_link_or_button "Sign in"
+end
+
+When(/^I click the link "(.*?)"$/) do |link|
+  click_link_or_button "Clothing List"
+end
+
+When(/^I click the button "(.*?)"$/) do |clothing_name|
+  clothing = Clothing.find_by_name(clothing_name)
+  clothing ||= Clothing.where(:name => clothing_name).first 
+  clothing.destroy unless clothing.nil?
+end
+
+
 
