@@ -11,7 +11,7 @@ Usage:
 
 To access app, go to the link below and Sign up for a new account:
 
-http://rubycloset.herokuapp.com/ 
+http://outfitfind.me/
 
 Features:
 =========
