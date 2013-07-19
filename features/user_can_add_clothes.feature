@@ -12,6 +12,6 @@ Feature: User can add clothes
     And I press "Sign in"
     And I click "Add Clothing"
     And I fill in "Clothing Name" with "Jeans"
-    And I fill in "Clothing Description" with "Pats"
+    And I fill in "Clothing Description" with "Pants"
     And I click "Bottom" radio button
     And I press "Add Clothing"

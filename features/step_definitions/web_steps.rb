@@ -64,6 +64,3 @@ When(/^I click the button "(.*?)"$/) do |clothing_name|
   clothing ||= Clothing.where(:name => clothing_name).first 
   clothing.destroy unless clothing.nil?
 end
-
-
-

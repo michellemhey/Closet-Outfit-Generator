@@ -4,7 +4,6 @@ class OutfitController < ApplicationController
     @tops = Clothing.get_by_type_class('top', current_user.id).shuffle!
     @bottoms = Clothing.get_by_type_class('btm', current_user.id).shuffle!
     @shoes = Clothing.get_by_type_class('shu', current_user.id).shuffle!
-
     @temperatures = Temperature.all
     @styles = Style.all
     @filter_temps = []

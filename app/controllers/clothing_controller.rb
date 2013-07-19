@@ -1,3 +1,4 @@
+
 class ClothingController < ApplicationController
 
   def index
@@ -21,8 +22,9 @@ class ClothingController < ApplicationController
     @clothing.type = Type.find(params[:type_id])
     @clothing.user = current_user
     if @clothing.save
+      #Clothing must be saved before we can link many-to-many
       if !params[:temperature_ids].nil?
-        @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))}
+        @clothing.temperatures << params[:temperature_ids].map {|id| Temperature.find(Integer(id))} 
       end
       if !params[:style_ids].nil?
         @clothing.styles << params[:style_ids].map {|id| Style.find(Integer(id))}
